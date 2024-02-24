@@ -76,10 +76,11 @@ public class LinkedList {
     }
 
     public Node removeLast() {
-        if (length == 0) return null;
+        if (length == 0)
+            return null;
         Node temp = head;
         Node pre = head;
-        while(temp.next != null) {
+        while (temp.next != null) {
             pre = temp;
             temp = temp.next;
         }
@@ -106,7 +107,8 @@ public class LinkedList {
     }
 
     public Node removeFirst() {
-        if (length == 0) return null;
+        if (length == 0)
+            return null;
         Node temp = head;
         head = head.next;
         temp.next = null;
@@ -118,9 +120,10 @@ public class LinkedList {
     }
 
     public Node get(int index) {
-        if (index < 0 || index >= length) return null;
+        if (index < 0 || index >= length)
+            return null;
         Node temp = head;
-        for(int i = 0; i < index; i++) {
+        for (int i = 0; i < index; i++) {
             temp = temp.next;
         }
         return temp;
@@ -135,8 +138,9 @@ public class LinkedList {
         return false;
     }
 
-    public boolean insert(int index, int value)  {
-        if (index < 0 || index > length) return false;
+    public boolean insert(int index, int value) {
+        if (index < 0 || index > length)
+            return false;
         if (index == 0) {
             prepend(value);
             return true;
@@ -154,9 +158,12 @@ public class LinkedList {
     }
 
     public Node remove(int index) {
-        if (index < 0 || index >= length) return null;
-        if (index == 0) return removeFirst();
-        if (index == length - 1) return removeLast();
+        if (index < 0 || index >= length)
+            return null;
+        if (index == 0)
+            return removeFirst();
+        if (index == length - 1)
+            return removeLast();
 
         Node prev = get(index - 1);
         Node temp = prev.next;
@@ -173,12 +180,24 @@ public class LinkedList {
         tail = temp;
         Node after = temp.next;
         Node before = null;
-        for(int i = 0; i <length; i++) {
-            after= temp.next;
+        for (int i = 0; i < length; i++) {
+            after = temp.next;
             temp.next = before;
             before = temp;
             temp = after;
         }
+
+    }
+
+    public Node findMiddleNode() {
+        Node slow = head;
+        Node fast = head;
+        while (fast != null && fast.next != null) {
+            // moving slow up 1 and fast up 2
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        return slow;
 
     }
 

@@ -190,7 +190,7 @@ public class LinkedList {
     }
 
     public Node findMiddleNode() {
-        //using Floyd's Tortoise and Hare algorithm to find the middle node
+        // using Floyd's Tortoise and Hare algorithm to find the middle node
         Node slow = head;
         Node fast = head;
         while (fast != null && fast.next != null) {
@@ -202,43 +202,42 @@ public class LinkedList {
 
     }
 
-    public boolean hasLoop(){
+    public boolean hasLoop() {
 
-        //checking if the linked list has a loop
-        //using Floyd's Tortoise and Hare algorithm
-        Node slow= head;
+        // checking if the linked list has a loop
+        // using Floyd's Tortoise and Hare algorithm
+        Node slow = head;
         Node fast = head;
         while (fast != null && fast.next != null) {
             // moving slow up 1 and fast up 2
             slow = slow.next;
             fast = fast.next.next;
-            if(slow == fast){
+            if (slow == fast) {
                 return true;
-            
+
             }
         }
         return false;
     }
 
-    //finding the kth node from the end of the linked list and not using length to traverse the list
+    // finding the kth node from the end of the linked list and not using length to
+    // traverse the list
     public Node findKthFromEnd(int k) {
         Node slow = head;
         Node fast = head;
- 
+
         for (int i = 0; i < k; i++) {
             if (fast == null) {
                 return null;
             }
             fast = fast.next;
         }
- 
+
         while (fast != null) {
             slow = slow.next;
             fast = fast.next;
         }
- 
+
         return slow;
     }
-}
-
 }

@@ -68,7 +68,7 @@ public class RandomizedBag<Item> implements Iterable<Item> {
     // Private iterator class for randomized order
     private class RandomBagIterator implements Iterator<Item> {
         private int i = 0;   // Index of the next item
-        private int[] shuffled; // Shuffled copy of the items for this iterator
+        private int[] shuffled; // Shuffled copy of the items for this iterator.
 
         public RandomBagIterator() {
             shuffled = new int[N]; // Allocate space for shuffled indices

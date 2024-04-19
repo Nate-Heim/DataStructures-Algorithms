@@ -13,14 +13,14 @@ Programming Assignment 3: WordNet
  *  information in synsets.txt. Why did you make this choice?
  *****************************************************************************/
 
-
+I used a HashMap to store the information in synsets.txt. The keys are the nouns and the values are sets of synset IDs. This allows for efficient lookup of synsets for a given noun. I also used another HashMap to store the reverse mapping, from synset IDs to sets of nouns. This allows for efficient lookup of nouns for a given synset.
 
 /******************************************************************************
  *  Describe concisely the data structure(s) you used to store the 
  *  information in hypernyms.txt. Why did you make this choice?
  *****************************************************************************/
 
-
+I used a Digraph to store the information in hypernyms.txt. The nodes represent the synsets and the edges represent the hypernym relationships between them. This allows for efficient traversal of the graph to find the shortest common ancestor of two synsets.
 
 /******************************************************************************
  *  Describe concisely your algorithm to compute the shortest common

@@ -79,3 +79,4 @@ ancestor(Iterable<Integer> v,
  *  on how much you learned from doing the assignment, and whether    
  *  you enjoyed doing it.                                             
  *****************************************************************************/
+I analyzed the methods in ShortestCommonAncestor and found that the worst-case running time is O(V + E), where V is the number of vertices and E is the number of edges in the digraph. The best-case running time is O(1) or O(h), where h is the height of the graph, which is at most V.

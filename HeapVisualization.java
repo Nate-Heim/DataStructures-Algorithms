@@ -80,7 +80,7 @@ public class HeapVisualization {
 
     public static void main(String[] args) {
         MaxHeap heap = new MaxHeap();
-        char[] operations = {'P', 'R', 'I', 'O', '*', 'R', '*', '*', 'I', '*', 'T', '*', 'Y', '*', '*', '*', 'Q', 'U', 'E', '*', '*', 'U', '*', 'E'};
+        char[] operations = {'P', 'R', 'I', 'O', '*', 'R', '*', '*', 'I', '*', 'T', '*', 'Y', '*', '*', '*', 'Q', 'U', 'E', '*', '*', '*', 'U', '*', 'E'};
 
         System.out.println("Sequence of Heaps:");
         for (char operation : operations) {
